@@ -1,6 +1,6 @@
 module CPU(
     input clk,
-    //input reset,
+    input reset,
     input [31:0]mem_rdata, //読み込みデータ
     output [31:0]mem_addr, //メモリアドレス
     output [31:0]mem_wdata, //でーた
@@ -19,7 +19,7 @@ wire [4:0]rs = mem_rdata[25:21];  //読み出し番号1
 wire [4:0]rt = mem_rdata[20:16];  //読み出し番号2
 wire [4:0]rd = mem_rdata[15:11];
 wire [4:0]writeNum; //書き込み番号：MUX_TOREGの出力
-wire [31:0]signExt = {{16{mem_rdata[15]}},mem_rdata[15:0]}; //命令15−０を符号拡張した信号
+wire [31:0]signExt = {{16{mem_rdata[15]}},mem_rdata[15:0]}; //命令15-０を符号拡張した信号
 wire [31:0]write_data;
 
 //ctrlSig:制御信号
@@ -124,6 +124,10 @@ wire [31:0] nextPC = PC + 4; //順次実行される際の次の実行位置
 wire [31:0] bAddr = nextPC + (signExt << 2); //計算
 
 always @(posedge clk)begin
-    PC <= pcSel ? bAddr : nextPC;
+    if(!reset)
+        PC <= 32'b0;
+    else
+        PC <= pcSel ? bAddr : nextPC;
 end
+
 endmodule
