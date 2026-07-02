@@ -1,0 +1,1451 @@
+$date
+	Thu Jul  2 22:02:13 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_cpu $end
+$var wire 32 ! mem_wdata [31:0] $end
+$var wire 32 " mem_addr [31:0] $end
+$var wire 1 # MemWrite $end
+$var wire 1 $ MemRead $end
+$var reg 1 % clk $end
+$var reg 32 & mem_rdata [31:0] $end
+$var integer 32 ' i [31:0] $end
+$scope module uut $end
+$var wire 32 ( aluIn1 [31:0] $end
+$var wire 1 % clk $end
+$var wire 32 ) mem_addr [31:0] $end
+$var wire 32 * mem_rdata [31:0] $end
+$var wire 32 + mem_wdata [31:0] $end
+$var wire 1 , pcSel $end
+$var wire 32 - write_data [31:0] $end
+$var wire 5 . writeNum [4:0] $end
+$var wire 32 / signExt [31:0] $end
+$var wire 5 0 rt [4:0] $end
+$var wire 5 1 rs [4:0] $end
+$var wire 32 2 rdata2 [31:0] $end
+$var wire 32 3 rdata1 [31:0] $end
+$var wire 5 4 rd [4:0] $end
+$var wire 6 5 opcode [5:0] $end
+$var wire 32 6 nextPC [31:0] $end
+$var wire 1 7 isZero $end
+$var wire 6 8 funct [5:0] $end
+$var wire 7 9 ctrlSig [6:0] $end
+$var wire 32 : bAddr [31:0] $end
+$var wire 2 ; aluOp [1:0] $end
+$var wire 32 < aluIn2 [31:0] $end
+$var wire 3 = aluFunc [2:0] $end
+$var wire 1 > RegWrite $end
+$var wire 1 ? RegDst $end
+$var wire 1 @ PCSrc $end
+$var wire 1 A MemtoReg $end
+$var wire 1 # MemWrite $end
+$var wire 1 $ MemRead $end
+$var wire 32 B F [31:0] $end
+$var wire 1 C ALUSrc $end
+$var reg 32 D PC [31:0] $end
+$scope module MUX_ALUOUT $end
+$var wire 32 E b [31:0] $end
+$var wire 1 A s $end
+$var wire 32 F z [31:0] $end
+$var wire 32 G a [31:0] $end
+$upscope $end
+$scope module MUX_TOALU $end
+$var wire 32 H a [31:0] $end
+$var wire 1 C s $end
+$var wire 32 I z [31:0] $end
+$var wire 32 J b [31:0] $end
+$upscope $end
+$scope module MUX_TOREG $end
+$var wire 5 K a [4:0] $end
+$var wire 5 L b [4:0] $end
+$var wire 1 ? s $end
+$var wire 5 M z [4:0] $end
+$upscope $end
+$scope module RF $end
+$var wire 1 % clk $end
+$var wire 5 N rd [4:0] $end
+$var wire 5 O rs [4:0] $end
+$var wire 5 P rt [4:0] $end
+$var wire 32 Q write_data [31:0] $end
+$var wire 1 > write_enable $end
+$var wire 32 R rt_out [31:0] $end
+$var wire 32 S rs_out [31:0] $end
+$upscope $end
+$scope module u_alu $end
+$var wire 32 T A [31:0] $end
+$var wire 32 U B [31:0] $end
+$var wire 1 V chain_en $end
+$var wire 32 W rca_F [31:0] $end
+$var wire 32 X rca_CO [31:0] $end
+$var wire 1 Y S2 $end
+$var wire 1 Z S1 $end
+$var wire 1 [ S0 $end
+$var wire 3 \ S [2:0] $end
+$var reg 1 ] CI0 $end
+$var reg 32 ^ F [31:0] $end
+$var reg 32 _ X [31:0] $end
+$var reg 32 ` Y [31:0] $end
+$var reg 1 7 Z $end
+$scope module u_rca $end
+$var wire 1 ] CI0 $end
+$var wire 32 a X [31:0] $end
+$var wire 32 b Y [31:0] $end
+$var wire 1 V chain_en $end
+$var wire 33 c carry [32:0] $end
+$var wire 32 d F [31:0] $end
+$var wire 32 e CO [31:0] $end
+$scope begin FA_ARRAY[0] $end
+$var wire 1 f cin_stage $end
+$var parameter 2 g i $end
+$scope begin CIN0 $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 f CIn $end
+$var wire 1 h CO $end
+$var wire 1 i F $end
+$var wire 1 j X $end
+$var wire 1 k Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[1] $end
+$var wire 1 l cin_stage $end
+$var parameter 2 m i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 l CIn $end
+$var wire 1 n CO $end
+$var wire 1 o F $end
+$var wire 1 p X $end
+$var wire 1 q Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[2] $end
+$var wire 1 r cin_stage $end
+$var parameter 3 s i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 r CIn $end
+$var wire 1 t CO $end
+$var wire 1 u F $end
+$var wire 1 v X $end
+$var wire 1 w Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[3] $end
+$var wire 1 x cin_stage $end
+$var parameter 3 y i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 x CIn $end
+$var wire 1 z CO $end
+$var wire 1 { F $end
+$var wire 1 | X $end
+$var wire 1 } Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[4] $end
+$var wire 1 ~ cin_stage $end
+$var parameter 4 !" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 ~ CIn $end
+$var wire 1 "" CO $end
+$var wire 1 #" F $end
+$var wire 1 $" X $end
+$var wire 1 %" Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[5] $end
+$var wire 1 &" cin_stage $end
+$var parameter 4 '" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 &" CIn $end
+$var wire 1 (" CO $end
+$var wire 1 )" F $end
+$var wire 1 *" X $end
+$var wire 1 +" Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[6] $end
+$var wire 1 ," cin_stage $end
+$var parameter 4 -" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 ," CIn $end
+$var wire 1 ." CO $end
+$var wire 1 /" F $end
+$var wire 1 0" X $end
+$var wire 1 1" Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[7] $end
+$var wire 1 2" cin_stage $end
+$var parameter 4 3" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 2" CIn $end
+$var wire 1 4" CO $end
+$var wire 1 5" F $end
+$var wire 1 6" X $end
+$var wire 1 7" Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[8] $end
+$var wire 1 8" cin_stage $end
+$var parameter 5 9" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 8" CIn $end
+$var wire 1 :" CO $end
+$var wire 1 ;" F $end
+$var wire 1 <" X $end
+$var wire 1 =" Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[9] $end
+$var wire 1 >" cin_stage $end
+$var parameter 5 ?" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 >" CIn $end
+$var wire 1 @" CO $end
+$var wire 1 A" F $end
+$var wire 1 B" X $end
+$var wire 1 C" Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[10] $end
+$var wire 1 D" cin_stage $end
+$var parameter 5 E" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 D" CIn $end
+$var wire 1 F" CO $end
+$var wire 1 G" F $end
+$var wire 1 H" X $end
+$var wire 1 I" Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[11] $end
+$var wire 1 J" cin_stage $end
+$var parameter 5 K" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 J" CIn $end
+$var wire 1 L" CO $end
+$var wire 1 M" F $end
+$var wire 1 N" X $end
+$var wire 1 O" Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[12] $end
+$var wire 1 P" cin_stage $end
+$var parameter 5 Q" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 P" CIn $end
+$var wire 1 R" CO $end
+$var wire 1 S" F $end
+$var wire 1 T" X $end
+$var wire 1 U" Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[13] $end
+$var wire 1 V" cin_stage $end
+$var parameter 5 W" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 V" CIn $end
+$var wire 1 X" CO $end
+$var wire 1 Y" F $end
+$var wire 1 Z" X $end
+$var wire 1 [" Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[14] $end
+$var wire 1 \" cin_stage $end
+$var parameter 5 ]" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 \" CIn $end
+$var wire 1 ^" CO $end
+$var wire 1 _" F $end
+$var wire 1 `" X $end
+$var wire 1 a" Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[15] $end
+$var wire 1 b" cin_stage $end
+$var parameter 5 c" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 b" CIn $end
+$var wire 1 d" CO $end
+$var wire 1 e" F $end
+$var wire 1 f" X $end
+$var wire 1 g" Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[16] $end
+$var wire 1 h" cin_stage $end
+$var parameter 6 i" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 h" CIn $end
+$var wire 1 j" CO $end
+$var wire 1 k" F $end
+$var wire 1 l" X $end
+$var wire 1 m" Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[17] $end
+$var wire 1 n" cin_stage $end
+$var parameter 6 o" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 n" CIn $end
+$var wire 1 p" CO $end
+$var wire 1 q" F $end
+$var wire 1 r" X $end
+$var wire 1 s" Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[18] $end
+$var wire 1 t" cin_stage $end
+$var parameter 6 u" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 t" CIn $end
+$var wire 1 v" CO $end
+$var wire 1 w" F $end
+$var wire 1 x" X $end
+$var wire 1 y" Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[19] $end
+$var wire 1 z" cin_stage $end
+$var parameter 6 {" i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 z" CIn $end
+$var wire 1 |" CO $end
+$var wire 1 }" F $end
+$var wire 1 ~" X $end
+$var wire 1 !# Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[20] $end
+$var wire 1 "# cin_stage $end
+$var parameter 6 ## i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 "# CIn $end
+$var wire 1 $# CO $end
+$var wire 1 %# F $end
+$var wire 1 &# X $end
+$var wire 1 '# Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[21] $end
+$var wire 1 (# cin_stage $end
+$var parameter 6 )# i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 (# CIn $end
+$var wire 1 *# CO $end
+$var wire 1 +# F $end
+$var wire 1 ,# X $end
+$var wire 1 -# Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[22] $end
+$var wire 1 .# cin_stage $end
+$var parameter 6 /# i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 .# CIn $end
+$var wire 1 0# CO $end
+$var wire 1 1# F $end
+$var wire 1 2# X $end
+$var wire 1 3# Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[23] $end
+$var wire 1 4# cin_stage $end
+$var parameter 6 5# i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 4# CIn $end
+$var wire 1 6# CO $end
+$var wire 1 7# F $end
+$var wire 1 8# X $end
+$var wire 1 9# Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[24] $end
+$var wire 1 :# cin_stage $end
+$var parameter 6 ;# i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 :# CIn $end
+$var wire 1 <# CO $end
+$var wire 1 =# F $end
+$var wire 1 ># X $end
+$var wire 1 ?# Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[25] $end
+$var wire 1 @# cin_stage $end
+$var parameter 6 A# i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 @# CIn $end
+$var wire 1 B# CO $end
+$var wire 1 C# F $end
+$var wire 1 D# X $end
+$var wire 1 E# Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[26] $end
+$var wire 1 F# cin_stage $end
+$var parameter 6 G# i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 F# CIn $end
+$var wire 1 H# CO $end
+$var wire 1 I# F $end
+$var wire 1 J# X $end
+$var wire 1 K# Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[27] $end
+$var wire 1 L# cin_stage $end
+$var parameter 6 M# i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 L# CIn $end
+$var wire 1 N# CO $end
+$var wire 1 O# F $end
+$var wire 1 P# X $end
+$var wire 1 Q# Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[28] $end
+$var wire 1 R# cin_stage $end
+$var parameter 6 S# i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 R# CIn $end
+$var wire 1 T# CO $end
+$var wire 1 U# F $end
+$var wire 1 V# X $end
+$var wire 1 W# Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[29] $end
+$var wire 1 X# cin_stage $end
+$var parameter 6 Y# i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 X# CIn $end
+$var wire 1 Z# CO $end
+$var wire 1 [# F $end
+$var wire 1 \# X $end
+$var wire 1 ]# Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[30] $end
+$var wire 1 ^# cin_stage $end
+$var parameter 6 _# i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 ^# CIn $end
+$var wire 1 `# CO $end
+$var wire 1 a# F $end
+$var wire 1 b# X $end
+$var wire 1 c# Y $end
+$upscope $end
+$upscope $end
+$scope begin FA_ARRAY[31] $end
+$var wire 1 d# cin_stage $end
+$var parameter 6 e# i $end
+$scope begin CINn $end
+$upscope $end
+$scope module fa_inst $end
+$var wire 1 d# CIn $end
+$var wire 1 f# CO $end
+$var wire 1 g# F $end
+$var wire 1 h# X $end
+$var wire 1 i# Y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module u_aluctrl $end
+$var wire 1 j# ALUFunc1 $end
+$var wire 1 k# ALUFunc2 $end
+$var wire 1 l# ALUFunc3 $end
+$var wire 1 m# add $end
+$var wire 1 n# and_ $end
+$var wire 6 o# funct [5:0] $end
+$var wire 1 p# i_type $end
+$var wire 1 q# or_ $end
+$var wire 1 r# slt $end
+$var wire 1 s# sub $end
+$var wire 1 t# r_type $end
+$var wire 1 u# beq $end
+$var wire 2 v# aluOp [1:0] $end
+$var wire 3 w# aluFunc [2:0] $end
+$upscope $end
+$scope module u_ctrl $end
+$var wire 1 x# ALUOp1 $end
+$var wire 1 y# ALUOp2 $end
+$var wire 1 z# ALUSrc $end
+$var wire 1 {# MemRead $end
+$var wire 1 |# MemWrite $end
+$var wire 1 }# MemtoReg $end
+$var wire 1 ~# PCSrc $end
+$var wire 1 !$ RegDst $end
+$var wire 1 "$ RegWrite $end
+$var wire 6 #$ opCode [5:0] $end
+$var wire 1 $$ sw $end
+$var wire 1 %$ r_type $end
+$var wire 1 &$ lw $end
+$var wire 7 '$ ctrlSig [6:0] $end
+$var wire 1 ($ beq $end
+$var wire 2 )$ aluOp [1:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b11111 e#
+b11110 _#
+b11101 Y#
+b11100 S#
+b11011 M#
+b11010 G#
+b11001 A#
+b11000 ;#
+b10111 5#
+b10110 /#
+b10101 )#
+b10100 ##
+b10011 {"
+b10010 u"
+b10001 o"
+b10000 i"
+b1111 c"
+b1110 ]"
+b1101 W"
+b1100 Q"
+b1011 K"
+b1010 E"
+b1001 ?"
+b1000 9"
+b111 3"
+b110 -"
+b101 '"
+b100 !"
+b11 y
+b10 s
+b1 m
+b0 g
+$end
+#0
+$dumpvars
+b10 )$
+0($
+b1001000 '$
+0&$
+1%$
+0$$
+b0 #$
+1"$
+1!$
+0~#
+0}#
+0|#
+0{#
+0z#
+0y#
+1x#
+bx w#
+b10 v#
+0u#
+1t#
+xs#
+xr#
+xq#
+0p#
+bx o#
+xn#
+xm#
+xl#
+xk#
+xj#
+xi#
+xh#
+xg#
+xf#
+xd#
+xc#
+xb#
+xa#
+x`#
+x^#
+x]#
+x\#
+x[#
+xZ#
+xX#
+xW#
+xV#
+xU#
+xT#
+xR#
+xQ#
+xP#
+xO#
+xN#
+xL#
+xK#
+xJ#
+xI#
+xH#
+xF#
+xE#
+xD#
+xC#
+xB#
+x@#
+x?#
+x>#
+x=#
+x<#
+x:#
+x9#
+x8#
+x7#
+x6#
+x4#
+x3#
+x2#
+x1#
+x0#
+x.#
+x-#
+x,#
+x+#
+x*#
+x(#
+x'#
+x&#
+x%#
+x$#
+x"#
+x!#
+x~"
+x}"
+x|"
+xz"
+xy"
+xx"
+xw"
+xv"
+xt"
+xs"
+xr"
+xq"
+xp"
+xn"
+xm"
+xl"
+xk"
+xj"
+xh"
+xg"
+xf"
+xe"
+xd"
+xb"
+xa"
+x`"
+x_"
+x^"
+x\"
+x["
+xZ"
+xY"
+xX"
+xV"
+xU"
+xT"
+xS"
+xR"
+xP"
+xO"
+xN"
+xM"
+xL"
+xJ"
+xI"
+xH"
+xG"
+xF"
+xD"
+xC"
+xB"
+xA"
+x@"
+x>"
+x="
+x<"
+x;"
+x:"
+x8"
+x7"
+x6"
+x5"
+x4"
+x2"
+x1"
+x0"
+x/"
+x."
+x,"
+x+"
+x*"
+x)"
+x("
+x&"
+x%"
+x$"
+x#"
+x""
+x~
+x}
+x|
+x{
+xz
+xx
+xw
+xv
+xu
+xt
+xr
+xq
+xp
+xo
+xn
+xl
+xk
+xj
+xi
+xh
+xf
+bx e
+bx d
+bx c
+bx b
+bx a
+bx `
+bx _
+bx ^
+x]
+bx \
+x[
+xZ
+xY
+bx X
+bx W
+xV
+bx U
+bx T
+bx S
+bx R
+bx Q
+bx P
+bx O
+bx N
+bx M
+bx L
+bx K
+bx J
+bx I
+bx H
+bx G
+bx F
+bx E
+b0 D
+0C
+bx B
+0A
+0@
+1?
+1>
+bx =
+bx <
+b10 ;
+bx :
+b1001000 9
+bx 8
+x7
+b100 6
+b0 5
+bx 4
+bx 3
+bx 2
+bx 1
+bx 0
+bx /
+bx .
+bx -
+0,
+bz +
+bx *
+b0 )
+bx (
+b100000 '
+bx &
+0%
+0$
+0#
+b0 "
+bz !
+$end
+#5000
+0#"
+0~
+0z
+1{
+0x
+07#
+0w"
+0q"
+0S"
+0/"
+0o
+0t
+04#
+0t"
+0n"
+0P"
+0,"
+0l
+07
+0g#
+0a#
+0[#
+0U#
+0O#
+0I#
+0C#
+0=#
+01#
+0+#
+0%#
+0}"
+0k"
+0e"
+0_"
+0Y"
+0M"
+0G"
+0A"
+0;"
+05"
+0)"
+1u
+b1101 B
+b1101 G
+b1101 ^
+0d#
+0^#
+0X#
+0R#
+0L#
+0F#
+0@#
+0:#
+0.#
+0(#
+0"#
+0z"
+0h"
+0b"
+0\"
+0V"
+0J"
+0D"
+0>"
+08"
+02"
+0&"
+0r
+b1101 W
+b1101 d
+b0 X
+b0 e
+0h
+0("
+0L"
+0j"
+0p"
+00#
+1i
+0f
+0n
+0""
+0."
+04"
+0:"
+0@"
+0F"
+0R"
+0X"
+0^"
+0d"
+0v"
+0|"
+0$#
+0*#
+06#
+0<#
+0B#
+0H#
+0N#
+0T#
+0Z#
+0`#
+0f#
+1k
+1w
+0+"
+0O"
+0m"
+0s"
+03#
+b0 c
+1|
+0*"
+0N"
+0l"
+0r"
+02#
+1V
+1Z
+0Y
+0q
+0}
+0%"
+01"
+07"
+0="
+0C"
+0I"
+0U"
+0["
+0a"
+0g"
+0y"
+0!#
+0'#
+0-#
+09#
+0?#
+0E#
+0K#
+0Q#
+0W#
+0]#
+0c#
+0i#
+0j
+0p
+0v
+0$"
+00"
+06"
+0<"
+0B"
+0H"
+0T"
+0Z"
+0`"
+0f"
+0x"
+0~"
+0&#
+0,#
+08#
+0>#
+0D#
+0J#
+0P#
+0V#
+0\#
+0b#
+0h#
+0[
+0]
+b101 `
+b101 b
+b1000 _
+b1000 a
+b101 <
+b101 I
+b101 U
+0j#
+1k#
+b10 =
+b10 \
+b10 w#
+b1000 (
+b1000 T
+b1000 3
+b1000 S
+b101 2
+b101 J
+b101 R
+b10000010001000 :
+0l#
+1m#
+0s#
+0n#
+0q#
+0r#
+b1 .
+b1 M
+b1 N
+b100000100000 /
+b100000100000 H
+b100000 8
+b100000 o#
+b10 1
+b10 O
+b11 0
+b11 L
+b11 P
+b1 4
+b1 K
+b10000110000100000100000 -
+b10000110000100000100000 F
+b10000110000100000100000 Q
+b1000 6
+b100 "
+b100 )
+b100 D
+b10000110000100000100000 &
+b10000110000100000100000 *
+b10000110000100000100000 E
+1%
+#10000
+0%
+#15000
+xd#
+x^#
+xX#
+xR#
+xL#
+xF#
+x@#
+x:#
+x4#
+x.#
+x(#
+x"#
+xz"
+xt"
+xn"
+xh"
+xb"
+x\"
+xV"
+xP"
+xJ"
+xD"
+x>"
+x8"
+x2"
+x,"
+x&"
+x~
+xx
+xr
+xl
+bx X
+bx e
+bx0 c
+x7
+bx B
+bx G
+bx ^
+bx W
+bx d
+xz
+xh
+xn
+xt
+x""
+x("
+x."
+x4"
+x:"
+x@"
+xF"
+xL"
+xR"
+xX"
+x^"
+xd"
+xj"
+xp"
+xv"
+x|"
+x$#
+x*#
+x0#
+x6#
+x<#
+xB#
+xH#
+xN#
+xT#
+xZ#
+x`#
+xf#
+xo
+x#"
+x)"
+x/"
+x5"
+x;"
+xA"
+xG"
+xM"
+xS"
+xY"
+x_"
+xe"
+xk"
+xq"
+xw"
+x}"
+x%#
+x+#
+x1#
+x7#
+x=#
+xC#
+xI#
+xO#
+xU#
+x[#
+xa#
+xg#
+xV
+xZ
+xi
+xu
+x{
+xq
+x}
+x%"
+x+"
+x1"
+x7"
+x="
+xC"
+xI"
+xO"
+xU"
+x["
+xa"
+xg"
+xm"
+xs"
+xy"
+x!#
+x'#
+x-#
+x3#
+x9#
+x?#
+xE#
+xK#
+xQ#
+xW#
+x]#
+xc#
+xi#
+xj
+xp
+xv
+x$"
+x*"
+x0"
+x6"
+x<"
+xB"
+xH"
+xN"
+xT"
+xZ"
+x`"
+xf"
+xl"
+xr"
+xx"
+x~"
+x&#
+x,#
+x2#
+x8#
+x>#
+xD#
+xJ#
+xP#
+xV#
+x\#
+xb#
+xh#
+x[
+xY
+xk#
+bx =
+bx \
+bx w#
+xk
+xw
+x|
+xj#
+xl#
+bx `
+bx b
+bx _
+bx a
+bx <
+bx I
+bx U
+xm#
+xs#
+xn#
+xq#
+xr#
+bx (
+bx T
+bx 3
+bx S
+bx 2
+bx J
+bx R
+bx .
+bx M
+bx N
+bx /
+bx H
+bx 8
+bx o#
+bx 1
+bx O
+bx 0
+bx L
+bx P
+bx 4
+bx K
+bx -
+bx F
+bx Q
+bx &
+bx *
+bx E
+bx :
+b1100 6
+b1000 "
+b1000 )
+b1000 D
+1%
+#20000
+0%
+#25000
+b10000 6
+b1100 "
+b1100 )
+b1100 D
+1%
+#30000
+0%
+#35000
+b10100 6
+b10000 "
+b10000 )
+b10000 D
+1%
+#40000
+0%
+#45000
+b11000 6
+b10100 "
+b10100 )
+b10100 D
+1%
+#50000
+0%
+#55000
+b11100 6
+b11000 "
+b11000 )
+b11000 D
+1%
+#60000
+0%
+#65000
+b100000 6
+b11100 "
+b11100 )
+b11100 D
+1%
+#70000
+0%
+#75000
+b100100 6
+b100000 "
+b100000 )
+b100000 D
+1%
+#80000
+0%
+#85000
+b101000 6
+b100100 "
+b100100 )
+b100100 D
+1%
+#90000
+0%
+#95000
+b101100 6
+b101000 "
+b101000 )
+b101000 D
+1%
+#100000
+0%
+#105000
+b110000 6
+b101100 "
+b101100 )
+b101100 D
+1%
+#110000
+0%
+#115000
+b110100 6
+b110000 "
+b110000 )
+b110000 D
+1%
+#120000
+0%
+#125000
+b111000 6
+b110100 "
+b110100 )
+b110100 D
+1%
+#130000
+0%
+#135000
+b111100 6
+b111000 "
+b111000 )
+b111000 D
+1%
+#140000
+0%
+#145000
+b1000000 6
+b111100 "
+b111100 )
+b111100 D
+1%
+#150000
+0%
+#155000
+b1000100 6
+b1000000 "
+b1000000 )
+b1000000 D
+1%
+#160000
+0%
+#165000
+b1001000 6
+b1000100 "
+b1000100 )
+b1000100 D
+1%
+#170000
+0%
+#175000
+b1001100 6
+b1001000 "
+b1001000 )
+b1001000 D
+1%
+#180000
+0%
+#185000
+b1010000 6
+b1001100 "
+b1001100 )
+b1001100 D
+1%
+#190000
+0%
+#195000
+b1010100 6
+b1010000 "
+b1010000 )
+b1010000 D
+1%
+#200000
+0%
