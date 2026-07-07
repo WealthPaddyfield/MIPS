@@ -20,14 +20,12 @@ always @(posedge clk) begin
 end
 
 // 読み出し
-assign rt_out =
-    //番号が0の場合は0を返す
-    (rt == 5'd0) ? 32'b0 :
-    //rd == rtの場合はwrite_dataを返す そうでなければregfileのrt番の値を返す
-    ((write_enable && (rd == rt) && (rd != 5'd0)) ? write_data : regfile[rt]);
+//番号が0の場合は0を返す
+//単一サイクルCPUでは書き込みはクロックエッジで確定するため
+//同一サイクル内のフォワーディングは不要（write_dataを返すと
+//rs_out→ALU→write_data→rs_outの組み合わせループになる）
+assign rt_out = (rt == 5'd0) ? 32'b0 : regfile[rt];
 
-assign rs_out =
-    (rs == 5'd0) ? 32'b0 :
-    ((write_enable && (rd == rs) && (rd != 5'd0)) ? write_data : regfile[rs]);
+assign rs_out = (rs == 5'd0) ? 32'b0 : regfile[rs];
 
 endmodule

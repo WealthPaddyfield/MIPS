@@ -1,8 +1,10 @@
 module CPU(
     input clk,
     input reset,
-    input [31:0]mem_rdata, //読み込みデータ
-    output [31:0]mem_addr, //メモリアドレス
+    input [31:0]instr,     //フェッチした命令
+    input [31:0]mem_rdata, //読み込みデータ（データメモリ）
+    output [31:0]pc_addr,  //命令アドレス（PC）
+    output [31:0]mem_addr, //データメモリアドレス（ALU出力）
     output [31:0]mem_wdata, //でーた
     output MemRead,
     output MemWrite
@@ -11,15 +13,15 @@ module CPU(
 
 wire [1:0]aluOp;    //ALUOp
 wire [6:0]ctrlSig;  //制御信号
-wire [5:0]funct = mem_rdata[5:0];    //funct 命令
+wire [5:0]funct = instr[5:0];    //funct 命令
 wire [2:0]aluFunc;  //ALU操作（ALU制御の出力）
 wire [31:0]F;       //ALU出力
 wire isZero;
-wire [4:0]rs = mem_rdata[25:21];  //読み出し番号1
-wire [4:0]rt = mem_rdata[20:16];  //読み出し番号2
-wire [4:0]rd = mem_rdata[15:11];
+wire [4:0]rs = instr[25:21];  //読み出し番号1
+wire [4:0]rt = instr[20:16];  //読み出し番号2
+wire [4:0]rd = instr[15:11];
 wire [4:0]writeNum; //書き込み番号：MUX_TOREGの出力
-wire [31:0]signExt = {{16{mem_rdata[15]}},mem_rdata[15:0]}; //命令15-０を符号拡張した信号
+wire [31:0]signExt = {{16{instr[15]}},instr[15:0]}; //命令15-０を符号拡張した信号
 wire [31:0]write_data;
 
 //ctrlSig:制御信号
@@ -41,7 +43,7 @@ reg [31:0]PC = 32'b0;
 
 //u_
 //IR decode
-wire [5:0]opcode = mem_rdata[31:26];
+wire [5:0]opcode = instr[31:26];
 
 //制御（図中：左下）
 ctrl u_ctrl(
@@ -114,7 +116,8 @@ MUX32 MUX_ALUOUT(
     .z(write_data)    //書き込みデータ
 );
 
-assign mem_addr = PC;
+assign pc_addr = PC;       //命令フェッチはPC
+assign mem_addr = F;       //lw/swのデータアドレスはALU出力
 
 assign mem_wdata = rdata2;
 

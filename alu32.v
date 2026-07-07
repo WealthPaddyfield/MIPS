@@ -37,12 +37,12 @@ module alu32(
                 Y   = ~B;
                 CI0 = 1'b1;
             end
-            3'b000: begin  // OR  : F = A | B
+            3'b001: begin  // OR  : F = A | B
                 X   = A | B;
                 Y   = 32'b0;
                 CI0 = 1'b0;
             end
-            3'b001: begin  // AND : F = A & B
+            3'b000: begin  // AND : F = A & B
                 X   = A | (~B);
                 Y   = ~B;
                 CI0 = 1'b0;
